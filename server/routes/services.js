@@ -22,11 +22,11 @@ const {
 router.get(
   '/ngrok',
   asyncWrapper(async (req, res) => {
-    const response = await fetch('http://ngrok:4040/api/tunnels');
+   /* const response = await fetch('http://ngrok:4040/api/tunnels');
     const { tunnels } = await response.json();
     const httpTunnel = tunnels.find(t => t.proto === 'http');
-    /* res.json({ url: httpTunnel.public_url }); */
-    res.json({ url: httpTunnel.public_url });
+     res.json({ url: httpTunnel.public_url }); */
+    res.json({ url: "104.181.167.77"});
   })
 );
 

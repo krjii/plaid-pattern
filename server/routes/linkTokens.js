@@ -33,19 +33,19 @@ router.post(
         accessToken = itemIdResponse.plaid_access_token;
         products = [];
       }
-      const response = await fetch('http://ngrok:4040/api/tunnels');
+      /* const response = await fetch('http://ngrok:4040/api/tunnels');
       const { tunnels } = await response.json();
-      const httpTunnel = tunnels.find(t => t.proto === 'http');
+      const httpTunnel = tunnels.find(t => t.proto === 'http'); */
       const linkTokenParams = {
         user: {
           // This should correspond to a unique id for the current user.
           client_user_id: 'uniqueId' + userId,
-        },
+        }, 
         client_name: 'Pattern',
         products,
         country_codes: ['US'],
         language: 'en',
-        webhook: httpTunnel.public_url + '/services/webhook',
+        webhook: '104.181.167.77' + '/services/webhook',
         access_token: accessToken,
       };
       // If user has entered a redirect uri in the .env file
